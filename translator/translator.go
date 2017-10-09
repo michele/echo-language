@@ -21,5 +21,8 @@ func TranslatorMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 }
 
 func GetLanguages(c echo.Context) language.Languages {
+	if c == nil || c.Get(languageKey) == nil {
+		return language.ParseHeader(language.Default)
+	}
 	return c.Get(languageKey).(language.Languages)
 }
