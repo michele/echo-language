@@ -1,7 +1,7 @@
 package translator
 
 import (
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 	"github.com/michele/http_accept_language/language"
 )
 
